@@ -1,7 +1,6 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
-import { StyleSheet, useColorScheme } from "react-native";
-import { Text } from "../../components/Themed";
+import { StyleSheet, useColorScheme, Text } from "react-native";
 
 import Colors from "../../constants/Colors";
 
@@ -31,9 +30,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href={"/modalOne"} asChild>
-              <Text lightColor={Colors.light.tint} style={styles.openModal}>
-                Open Modal
-              </Text>
+              <Text style={styles.openModal}>Open Modal</Text>
             </Link>
           ),
         }}
@@ -45,9 +42,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href={"/modalOne"} asChild>
-              <Text lightColor={Colors.light.tint} style={styles.openModal}>
-                Open Modal
-              </Text>
+              <Text style={styles.openModal}>Open Modal</Text>
             </Link>
           ),
         }}
@@ -60,5 +55,6 @@ const styles = StyleSheet.create({
   openModal: {
     fontSize: 17,
     marginRight: 10,
+    color: Colors.light.tint,
   },
 });

@@ -1,8 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import { Platform, StyleSheet } from "react-native";
+import { Platform, StyleSheet, Text } from "react-native";
 
 import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import { View } from "../../components/Themed";
 import { Link } from "expo-router";
 import Colors from "../../constants/Colors";
 
@@ -17,9 +17,7 @@ export default function ModalScreen() {
       />
       <EditScreenInfo path="app/(modals)/modalOne.tsx" />
       <Link href={"/modalTwo"} asChild>
-        <Text lightColor={Colors.light.tint} style={styles.navigateModalTwo}>
-          Navigate to Modal Two
-        </Text>
+        <Text style={styles.navigateModalTwo}>Navigate to Modal Two</Text>
       </Link>
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
@@ -46,5 +44,6 @@ const styles = StyleSheet.create({
   navigateModalTwo: {
     marginTop: 30,
     fontSize: 17,
+    color: Colors.light.tint,
   },
 });
